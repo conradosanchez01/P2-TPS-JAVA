@@ -40,7 +40,7 @@ public class seccion3 {
         // Prueba Checked
         CuentaBancaria cuenta = new CuentaBancaria();
         try {
-            cuenta.retirar(5);
+            cuenta.retirar(5000);
             System.out.println("Retiro exitoso, no hubo excepcion.");
         } catch (SaldoInsuficienteException e) {
             System.out.println("Excepcion Checked: " + e.getMessage());
