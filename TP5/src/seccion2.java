@@ -17,7 +17,7 @@ public class seccion2 {
         Contador contador = new Contador();
 
         Runnable tarea = () -> {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 1000; i++) {
                 contador.incrementar();
             }
         };
@@ -27,8 +27,8 @@ public class seccion2 {
 
         h1.start();
         h2.start();
-// Esperamos a que terminen
-        h1.join();
+
+        h1.join();// Esperamos a que termine
         h2.join();
 
         System.out.println("Resultado final (con error): " + contador.getCuenta());
