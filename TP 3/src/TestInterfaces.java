@@ -17,19 +17,12 @@ public class TestInterfaces {
         Supplier<Double> aleatorio = () -> Math.random();
         System.out.println("Random: " + aleatorio.get());
 
-
-
-
-
         // 1.2 Comparator
         List<String> textos = new ArrayList<>(List.of("java", "stream", "codear", "ia"));
         textos.sort((a, b) -> a.length() - b.length());
         System.out.println("ordenados por longitud: " + textos);
 
-
-
-
-        //  1.3 Variantes Primitivas
+        // 1.3 Variantes Primitivas
         IntPredicate esParPrimitivo = n -> n % 2 == 0;
         ToIntFunction<String> longitudPrimitiva = s -> s.length();
 
