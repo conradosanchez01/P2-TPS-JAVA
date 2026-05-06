@@ -13,7 +13,7 @@ class ProductoInvalidoException extends RuntimeException {
 }
 
 class CuentaBancaria {
-    private double saldo = 100;
+    private double saldo = 1000;
     public void retirar(double monto) throws SaldoInsuficienteException {
         if (monto > saldo) {
             throw new SaldoInsuficienteException("Saldo insuficiente en la cuenta");
@@ -21,6 +21,9 @@ class CuentaBancaria {
         saldo -= monto;
     }
 }
+
+
+
 
 class Producto {
     public Producto(double precio) {
@@ -32,21 +35,18 @@ class Producto {
 
 
 
-
-
-
-
 public class seccion3 {
     public static void main(String[] args) {
         // Prueba Checked
         CuentaBancaria cuenta = new CuentaBancaria();
         try {
-            cuenta.retirar(500);
+            cuenta.retirar(5);
+            System.out.println("Retiro exitoso, no hubo excepcion.");
         } catch (SaldoInsuficienteException e) {
             System.out.println("Excepcion Checked: " + e.getMessage());
         }
 
         // Prueba Unchecked
-        Producto p = new Producto(-1);
+        Producto p = new Producto(0);
     }
 }
